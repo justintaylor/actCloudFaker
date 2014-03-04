@@ -116,4 +116,4 @@ UpgradeLog*.XML
 /grunt.cmd
 
 # don't save generated data
-data.csv
+*.csv

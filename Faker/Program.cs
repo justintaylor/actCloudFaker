@@ -26,15 +26,17 @@ namespace Faker
 
         #region user config
 
-            int toCreate = 50; // # of contacts to create
+            int toCreate = 15000; // # of contacts to create
 
             // maximum random number to be used when generating random data
-            // the larger this is in relation to the last case statement below the more contacts with 'full data' will be created
-            int randomness = 7; 
+            // the larger this is in relation to the last case statement below (currently 9) the more contacts with 'full data' will be created
+            int randomness = 9; 
 
+            // save file in this dir
+            string dir = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\";
         #endregion
 
-            using (StreamWriter writer = new StreamWriter("..\\..\\..\\..\\..\\..\\" + toCreate + " numbered contacts.csv"))
+            using(StreamWriter writer = new StreamWriter(dir + toCreate + " contacts.csv"))
             {
                 // headers
                 writer.WriteLine("FirstName,LastName,Company,JobTitle,EmailAddress,PrimaryPhoneNumber,AltPhoneNumber,Type,Line1,Line2,Line3,City,State,PostalCode,Country,AltType,AltLine1,AltLine2,AltLine3,AltCity,AltState,AltPostalCode,AltCountry,Website,Birthday,CustomField1");
@@ -459,7 +461,7 @@ namespace Faker
 
 
             //leave the following
-            Console.WriteLine("Done");
+            Console.WriteLine("Done - file location: " + dir + toCreate + " contacts.csv");
         }
 
         #region helper methods

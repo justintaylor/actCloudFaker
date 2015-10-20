@@ -26,11 +26,11 @@ namespace Faker
 
         #region user config
 
-            int toCreate = 15000; // # of contacts to create
+            int toCreate = 10; // # of contacts to create
 
             // maximum random number to be used when generating random data
             // the larger this is in relation to the last case statement below (currently 9) the more contacts with 'full data' will be created
-            int randomness = 9; 
+            int randomness = 5; 
 
             // save file in this dir
             string dir = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\";
